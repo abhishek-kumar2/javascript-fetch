@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript-Fetch</title>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <main>
+            <div class="container py-4">
+              <header class="pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4 bg-dark rounded-2"> &#9760; </span>
+                  <span class="fs-4 ms-2">Jumbotron example</span>
+                </a>
+              </header>
+          
+              <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                  <h1 class="display-5 fw-bold">Fetch Responce</h1>
+                  <ul class="list-group mb-3" id="list-small-data"></ul>
+                  <button class="btn btn-primary btn-lg" type="button" id="fetch-small-data">Fetch data</button>
+                </div>
+              </div>
+          
+              <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                  <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>Change the background</h2>
+                    <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+                    <button class="btn btn-outline-light" type="button">Example button</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Add borders</h2>
+                    <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                    <button class="btn btn-outline-secondary" type="button">Example button</button>
+                  </div>
+                </div>
+              </div>
+          
+              <footer class="pt-3 mt-4 text-muted border-top">
+                &copy; 2022
+              </footer>
+            </div>
+          </main>
+
+          <script>
+              const smallDataFetchBtn = document.querySelector('#fetch-small-data');
+              const outputSmallDataFetch = document.querySelector('#list-small-data');
+              const url = '/data/rec2.json';
+
+              smallDataFetchBtn.onclick = () => {
+                  fetch(url)
+                  .then(res => res.json())
+                  .then(data => {
+                      addData(data)
+                  })
+              }
+
+              function addData(data){
+                  let html = '';
+                  data.forEach(person => {
+                      html += `<li class="list-group-item">
+                            <div class="row justify-content-start">
+                                <div class="col-3"><i>Name: </i> <b>${person.firstName} ${person.lastName}</b></div>
+                                <div class="col-2"><i class="ms-4">Class: </i> <b>${person.class}</b></div>
+                                <div class="col-5"><i class="ms-4">Subjects: </i> <b>${person.subjects}</b></div>
+                            </div>
+                        </li>`;
+                  });
+
+                  outputSmallDataFetch.innerHTML = html;
+              }
+          </script>
+    </body>
+</html>

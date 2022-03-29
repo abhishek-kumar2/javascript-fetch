@@ -1,0 +1,24 @@
+{
+  "name": "javascript-fetch",
+  "version": "1.0.0",
+  "description": "JavaScript Fetch API practice",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "NodeJs",
+    "Express",
+    "Fetch"
+  ],
+  "author": "Abhishek Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

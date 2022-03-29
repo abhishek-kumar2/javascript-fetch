@@ -1,0 +1,20 @@
+[
+    {
+        "firstName": "Abhishek",
+        "lastName": "Kumar",
+        "class": "VI",
+        "subjects": "Hindi, English, Maths"
+    },
+    {
+        "firstName": "Aarav",
+        "lastName": "Kumar",
+        "class": "II",
+        "subjects": "Hindi, English, Maths, Computer"
+    },
+    {
+        "firstName": "Push",
+        "lastName": "Kumar",
+        "class": "III",
+        "subjects": "Hindi, English, Science, Computer"
+    }
+]
